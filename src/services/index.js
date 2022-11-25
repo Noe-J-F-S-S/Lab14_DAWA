@@ -3,7 +3,9 @@ import instance from "./config"
 
 export const get = async(url) => {
     try{
-        return await instance.get(url)
+        return await (
+            await instance.get(url) 
+        ).data;
     }catch(error){
         return error;
     }
@@ -11,7 +13,9 @@ export const get = async(url) => {
 
 export const post = async (url, body) => {
     try{
-        return await instance.post(url, JSON.stringify(body));
+        return await (
+          await  instance.post(url, JSON.stringify(body))
+        ).data;
     }catch(error) {
         return error
     }
