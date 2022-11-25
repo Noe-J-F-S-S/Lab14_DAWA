@@ -31,6 +31,7 @@ const handleInputChange = (e) => {
 
 const handleSubmit = async (e) => {
   e.preventDefault()
+  console.log(values)
   const response = await post("users/signup", values);
 
   if(response.ok){
@@ -49,7 +50,7 @@ const handleSubmit = async (e) => {
     <Box>
         <form  noValidate autoComplete="off">
         <TextField 
-          name="nombre" 
+          name="name" 
           value={values.name}
           onChange={handleInputChange}
            
